@@ -6,8 +6,9 @@ from mcp.server.fastmcp import FastMCP
 # Initialize FastMCP Server
 mcp = FastMCP("Ledger Assistant DB")
 
-DB_PATH = "ledger.db"
-SCHEMA_PATH = "schema.sql"
+base_dir = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(base_dir, "ledger.db")
+SCHEMA_PATH = os.path.join(base_dir, "schema.sql")
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)

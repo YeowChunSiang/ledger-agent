@@ -1,8 +1,13 @@
 import streamlit as st
+import sys
+import os
+
+# Add script directory to path to resolve local imports on Streamlit Cloud
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import pandas as pd
 import plotly.express as px
 import sqlite3
-import os
 import uuid
 import asyncio
 from dotenv import load_dotenv
